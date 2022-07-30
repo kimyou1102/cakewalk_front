@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// Order_3.jsx
 export const OptionWrap = styled.div`
     display: flex;
     width: 960px;
@@ -151,4 +152,35 @@ export const Select = styled.select`
 export const AdtnlOptionWrap = styled.div`
     display: flex;
     margin-top: 17px;
+`
+
+// Nav.jsx
+export const NavDiv = styled.div`
+    box-sizing: border-box;
+    width: 100%;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 50px;
+    position: fixed;
+    background-color: white;
+    border-bottom : ${(props) => props.isBorder ? '1px solid #e5e8eb' : ''};
+`
+
+export const LogoImg = styled.img`
+    width: 100px;
+    height: 60px;
+`
+
+export const NavUl = styled.ul`
+    display: flex;
+    margin: 0;
+    list-style: none;
+`
+
+export const NavLi = styled.li`
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
 `

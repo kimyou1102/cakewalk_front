@@ -91,13 +91,13 @@ const Order_3 = () => {
                     <DetailOptionText isBlock>추가옵션</DetailOptionText>
                     <RadioBtnForm action="#" num="34px">
                         <Label>
-                            <RadioBtn value="candle" name="add" />초 추가<CountInput />개
+                            <CheckBtn value="candle" name="add" />초 추가<CountInput />개
                         </Label>
                         <Label>
-                            <RadioBtn value="Ballon" name="add" />풍선 추가
+                            <CheckBtn value="Ballon" name="add" />풍선 추가
                         </Label>
                         <Label>
-                            <RadioBtn value="addIce" name="add" />보냉백 추가
+                            <CheckBtn value="addIce" name="add" />보냉백 추가
                         </Label>
                     </RadioBtnForm>
                 </AdtnlOptionWrap>
@@ -112,15 +112,3 @@ const Order_3 = () => {
 
 export default Order_3;
 
-/* <OptionWrap>
-                <Option>
-                    <OptionTitleWrap>
-                        <OptionNumber>3</OptionNumber>
-                        <OptionTextWrap>
-                            <OptionText>케이크 선택하기</OptionText>
-                            <OptionSubText>디자인한 케이크 도안을 선택해주세요.</OptionSubText>
-                        </OptionTextWrap>
-                    </OptionTitleWrap>
-                </Option>
-                <Option>상세옵션 선택하기</Option>
-            </OptionWrap>  */
