@@ -1,0 +1,198 @@
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.nanumgothic * {
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+header {
+  height: 8.875rem;
+  background-color: #fff6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5.375rem;
+}
+
+.header-contents-container {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+}
+
+.store-name {
+  font-family: nanumgothic;
+  font-size: 3rem;
+}
+.store-info-grid-box {
+  width: 18.75rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.cake-main-image {
+  width: 25.5rem;
+  height: 25.5rem;
+  border-radius: 50%;
+  margin-left: 1.375rem;
+}
+
+.cake-sub-image {
+  width: 10.375rem;
+  height: 10.375rem;
+  border-radius: 50%;
+}
+
+.heart-box {
+  width: 4.1rem;
+  height: 2.2rem;
+  background-color: #ffffff;
+  padding: 0 0.5rem 0 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  bottom: 1.875rem;
+  right: 20px;
+}
+
+.like-count {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1rem;
+}
+
+.cake-addition-view {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1.125rem;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  width: 7.25rem;
+  height: 7.25rem;
+  border-radius: 50%;
+  background-color: rgba(227, 225, 225, 0.44);
+  box-shadow: -3px -4px 4px 0px rgba(154, 154, 154, 0.25);
+}
+
+section {
+  display: flex;
+  margin-left: 100px;
+
+  align-items: center;
+}
+
+.cake-item-first {
+  position: relative;
+  top: 10px;
+  left: 100px;
+}
+
+.cake-item-second {
+  position: relative;
+  right: 10px;
+}
+
+.cake-item-third {
+  position: relative;
+  left: 10px;
+}
+
+.cake-item-last {
+  position: relative;
+  left: 140px;
+  bottom: 50px;
+}
+
+h2 {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 13.37px;
+}
+
+.notice-box {
+  width: 22.375rem;
+  height: 8.75rem;
+  overflow-y: scroll;
+  background-color: rgba(255, 230, 97, 0.2);
+}
+
+.review-more-btn {
+  width: 3.25rem;
+  height: 1.575rem;
+  background-color: white;
+  border: 1px solid #2d2d2d;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: bold;
+  font-size: 0.75rem;
+  border-radius: 20px;
+}
+
+.review-box-header {
+  width: 22.375rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-box {
+  width: 22.375rem;
+  height: 20.063rem;
+  border: 1px solid black;
+  padding: 10px 12px 10px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-box-filter-container {
+  width: 3.75rem;
+  padding: 3px 0 3px 0;
+  margin-bottom: 15px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+}
+
+.review-rating-span {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.review-author-span {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+.review-date-span {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: lighter;
+  font-size: 0.9rem;
+}
+
+.review-header-left-container {
+  width: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.review-body-span {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: lighter;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+}
