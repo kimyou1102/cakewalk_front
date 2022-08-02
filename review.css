@@ -1,0 +1,72 @@
+.x {
+  position: absolute;
+  top: 26px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+}
+
+.all {
+  width: 805px;
+  margin-left: 77px;
+  margin-top: 24px;
+}
+
+.store-review {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 44px;
+  margin-left: 60px;
+  padding-top: 60px;
+}
+
+.review-top-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-title {
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.review-main-text {
+  margin: 10px 5px;
+}
+
+.review-name {
+  margin-left: 20px;
+}
+
+.line {
+  margin-top: 24px;
+}
+
+.review-text {
+  width: 954px;
+  height: 638px;
+  position: relative;
+  border-radius: 30px;
+  box-shadow: #dbdbdb 0px 3px 12px;
+}
+
+.review-wrap {
+  height: 480px;
+  overflow-y: scroll;
+  margin-top: 40px;
+}
+
+.review-wrap::-webkit-scrollbar {
+  width: 8px; /* 스크롤바의 너비 */
+}
+
+.review-wrap::-webkit-scrollbar-thumb {
+  height: 112px; /* 스크롤바의 길이 */
+  background: #d9d9d9; /* 스크롤바의 색상 */
+  border-radius: 10px;
+}
+
+.review-wrap::-webkit-scrollbar-track {
+  background: transfer; /*스크롤바 뒷 배경 색상*/
+}
