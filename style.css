@@ -1,10 +1,14 @@
 *{
     /* border: red solid 1px; */
 }
+body{
+    overflow-x: hidden;
+    background-color: #f5f5f5f5;
+}
 nav{
     box-shadow: 0 2px 5px 1px rgba(0, 0, 0,0.3);
     width: 100vw;
-    min-height: 50px;
+    height: 60px;
 
     display: flex;
     justify-content: space-between;
@@ -12,6 +16,8 @@ nav{
 
     padding: 10px;
     box-sizing: border-box;
+
+    background-color: white;
 }
 .logo{
     position: relative;
@@ -20,22 +26,30 @@ nav{
 }
 .navbar{
     min-width: 40vw;
+    
+    margin-right: 20px;
+
     display: flex;
     justify-content: space-between;
 }
 .navbar div{
     display: flex;
     align-items: center;
+
+    cursor: pointer;
 }
 
 /*-------------------------------------------------------------*/
 
 main{
     width: 100vw;
+    display: flex;
 }
 .side_window{
-    width: 360px;
-    
+    position: relative;
+
+    width: 20vw;
+    min-width: 180px;
 }
 
 /*--------------------- toolbar ----------------------*/
@@ -63,24 +77,25 @@ main{
     height: 80vh;
     width:  100%;
 }
-.order{
-    min-height: 100px;
-}
 .order_num{
     display: flex;
 }
 .order_num_item{
     width: 20%;
-    height: 40px;
+    height: 30px;
+
     display: flex;
     justify-content: center;
     align-items: center;
+    
     color: rgba(255, 255,255,0.3);
     font-weight: 900;
-    font-size: 24px;
+    font-size: 18px;
 
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+
+    cursor: pointer;
 }
 .order_num .active{
     color: white;
@@ -108,8 +123,223 @@ main{
 
     background-color: #F8BBD0;
     color:white;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 900;
 
     box-shadow: 0 2px 5px 1px rgba(0, 0, 0,0.3);
 }
+/*---------------------- main_tool_box ----------------*/
+.main_tool_box{
+    position: relative;
+
+    height: 80vh;
+
+    background-color: white;
+
+    padding: 20px;
+}
+
+.caution{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+
+    padding: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #FFFEED;
+    
+}
+.caution_img{
+    margin-right: 6px;
+}
+.caution_text{
+    font-size: 0.3rem;
+    line-height: 14px;
+}
+.caution_text span{
+    font-weight: 900;
+}
+.select_size, .select_height{
+    margin-top: 18px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.select_height{
+    margin-top: 10px;
+}
+.select_size_title, .select_height_title{
+    font-weight: 900;
+    font-size: 0.8rem;
+}
+.select_size_tool, .select_height_tool{
+    width: 70%;
+
+    border: 1px solid black;
+    border-radius: 5px;
+
+    padding: 5px;
+
+    box-shadow: 0 2px 5px 1px rgba(0, 0, 0,0.3);
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 0.5rem;
+}
+.select_shape{
+    margin-top: 2rem;
+}
+.shape_switch{
+    position: relative;
+
+    margin: 0 auto;
+
+    width: 80%;
+    height: 2rem;
+
+    border: 2px solid black;
+    border-radius: 2rem;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.shape_switch_item{
+    position: relative;
+
+    width: 50%;
+
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+
+    font-size: 0.8rem;
+}
+.shape_switch_item_active{
+    color: black;
+    font-weight: 900;
+}
+.select_box{
+    position: absolute;
+    top: 0; left: 0;
+    
+    width: 52%;
+    height: 100%;
+    
+    background-color: #F8BBD0;
+    opacity: 40%;
+
+    border-radius: 2rem;
+
+}
+.shape{
+    margin-top: 1rem;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.shpae_item{
+    position: relative;
+
+    width: 100%;
+    padding-bottom: 100%;
+
+    border-radius: 5px;
+    background-color: #cacaca;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+.shape_item_active{
+    background-color: #F8BBD0;
+}
+.shape_item_inner{
+    position: absolute;
+    top: 50%; left: 50%;
+
+    transform: translate(-50%, -50%) scale(0.8);
+}
+.order_btn{
+    position: absolute;
+    left: 50%;
+    bottom: 1rem;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+    height: 3rem;
+    
+    border-radius: 10px;
+
+    color: white;
+    font-size: 18px;
+
+    background-color: #F8BBD0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+/*--------------------- work board -----------------*/
+.work_board{
+    height: calc(80vh + 100px);
+    width: 55vw;
+    
+    margin: 1.5rem;
+    margin-bottom: 0;
+    padding: 1.5rem;
+
+    background-color: white;
+}
+
+/*------------------- right side window --------------*/
+.right_side_window{
+    position: relative;
+    
+    width: 20vw;
+
+    padding-right: 1rem;
+    box-sizing: border-box;
+}
+.memo_board{
+    width: 100%;
+    height: 50vh;
+
+    padding: 0.5rem;
+    box-sizing: border-box;
+
+    margin-top: 1.5rem;
+    margin-left: 0;
+
+    background-color: white;
+}
+.board_switch_btn{
+    width: 1rem;
+    height: 1rem;
+
+    position: relative;
+    left:-1rem; top: 1rem;
+}
+.second_work_board{
+    position: absolute;
+    bottom: 1rem;
+
+    width: 100%;
+    height: 40vh;
+
+    background-color: white;
+}
+

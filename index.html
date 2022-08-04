@@ -7,6 +7,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="./init.css">
     <link rel="stylesheet" href="./style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
     <script src="./main.js" defer></script>
 </head>
 <body>
@@ -49,8 +51,8 @@
                 </div>
                 <div class="main_tool_box">
                     <div class="caution">
-                        <div class="caution_img"></div>
-                        <div class="caution_text">크기의 호수와 높이(단)의 <b>사이즈는 가게마다 다를 수</b> 있습니다</div>
+                        <div class="caution_img"><img src="./img/caution.png"></div>
+                        <div class="caution_text">크기의 호수와 높이(단)의 <span>사이즈는 가게마다 다를 수</span> 있습니다</div>
                     </div>
                     <div class="select_size">
                         <div class="select_size_title">크기</div>
@@ -62,21 +64,55 @@
                     </div>
                     <div class="select_shape">
                         <div class="shape_switch">
-                            <div class="basic_shape">기본 모양</div>
-                            <div class="pic_shape">사진 첨부</div>
+                            <div class="shape_switch_item shape_switch_item_active">기본 모양</div>
+                            <div class="shape_switch_item">사진 첨부</div>
+                            <div class="select_box"></div>
                         </div>
                         <div class="shape">
-                            <div class="shpae_circle">
-                                <div class="circle_img"></div>
+                            <div class="shape_item" data-shape="circle">
+                                <img src="./img/shape_circle.png"> 
+                            </div>
+                            <div class="shape_item" data-shape="rectangle">
+                                <img src="./img/shape_Rectangle.png">
                             </div>    
+                            <div class="shape_item" data-shape="triangle">
+                                <img src="./img/shape_triangle.png">
+                            </div>    
+                            <div class="shape_item" data-shape="star">
+                                <img src="./img/shape_star.png">
+                            </div>    
+                            <div class="shape_item" data-shape="heart">
+                                <img src="./img/shape_heart.png">
+                            </div>    
+                            <div class="shape_item" data-shape="dubble">
+                                <img src="./img/shape_dubble.png">
+                            </div>        
                         </div>
                     </div>
-                </div>
-                <div class="order_btn">
-                    주문하기
+
+                    <div class="order_btn">
+                        주문하기
+                    </div>
                 </div>
             </div>
-
+        </div>
+        <div class="work_board">
+            <canvas id="c" class="work_board_title">  
+                <h3>&lt;윗면&gt;</h3>
+            </canvas>
+        </div>
+        <div class="right_side_window">
+            <div class="memo_board">
+                <div class="memo_board_title">
+                    <h3>&lt;memo&gt;</h3>
+                </div>
+            </div>
+            <div class="board_switch_btn">
+                <img src="./img/switch_board.png">
+            </div>
+            <div class="second_work_board">
+                <div class="second_work_board_title">&lt;옆면&gt;</div>
+            </div>
         </div>
     </main>
 </body>
