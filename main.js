@@ -16,6 +16,7 @@ let cur_shape = null;
 let selected_shape = null;
 let selected_size = 2
 let selected_height = 3;
+let mag = 1.0;
 
 canvas.setDimensions({width : `${canvas_width}`, height: `${canvas_height}`});
 canvas2.setDimensions({width : `${canvas2_width}`, height: `${canvas2_height}`});
@@ -52,13 +53,13 @@ function drawShape(canvas, shape){
         return;
     }
     else{
-        let side_posX = canvas2_width /2 - (canvas2_width /3);
-        let side_posY = canvas2_height /2 -(canvas2_height /6);
+        let side_posX = canvas2_width /2 - (canvas2_width * mag/3);
+        let side_posY = canvas2_height /2 -(canvas2_height * mag/6);
         let sideRect = new fabric.Rect({
             top: side_posY,
             left : side_posX,
-            width: canvas2_width * 2 /3,
-            height : canvas2_height /3,
+            width: canvas2_width * 2 * mag/3 ,
+            height : canvas2_height * mag/3,
             fill:'#ccc',
             stroke : 'black',
             strokeWidth: 3,
@@ -70,12 +71,12 @@ function drawShape(canvas, shape){
     let posY = 0;
     switch(shape){
         case 'circle':
-            posY = (canvas_height /2) - (canvas_width /4);
-            posX = (canvas_width / 2) - (canvas_width /4);
+            posY = (canvas_height /2) - (canvas_width * mag/4);
+            posX = (canvas_width / 2) - (canvas_width * mag/4);
             let circle = new fabric.Circle({
                 top: posY,
                 left : posX,
-                radius : canvas_width /4,
+                radius : canvas_width * mag /4,
                 stroke: 'black',
                 strokeWidth : 3,
                 fill: '#ccc'
@@ -84,13 +85,13 @@ function drawShape(canvas, shape){
             canvas.add(circle);
             break;
         case 'rectangle':
-            posY = (canvas_height / 2) - (canvas_width /4);
-            posX = (canvas_width / 2) - (canvas_width /4);
+            posY = (canvas_height / 2) - (canvas_width * mag/4);
+            posX = (canvas_width / 2) - (canvas_width * mag/4);
             let rect = new fabric.Rect({
                 top: posY,
                 left: posX,
-                width: canvas_width /2,
-                height: canvas_width /2,
+                width: canvas_width * mag/2,
+                height: canvas_width * mag/2,
                 stroke: 'black',
                 strokeWidth : 3,
                 fill: '#ccc'
@@ -99,13 +100,13 @@ function drawShape(canvas, shape){
             canvas.add(rect);
             break;
         case 'triangle':
-            posY = canvas_height / 2 -((canvas_width / 2) * Math.sqrt(3) / 4);
+            posY = canvas_height / 2 -((canvas_width / 2) * Math.sqrt(3) * mag / 4);
             posX = canvas_width / 4;
             let tri = new fabric.Triangle({
                 top: posY,
                 left : posX,
-                width : canvas_width / 2,
-                height: (canvas_width / 2) * Math.sqrt(3) / 2,
+                width : canvas_width * mag/ 2,
+                height: (canvas_width / 2) * Math.sqrt(3)* mag / 2,
                 stroke: 'black',
                 strokeWidth : 3,
                 fill: '#ccc'
@@ -114,12 +115,12 @@ function drawShape(canvas, shape){
             canvas.add(tri);
             break;
         case 'star':
-            posY = canvas_height / 2 -(canvas_width /3);
-            posX = canvas_width / 2 -(canvas_width / 3); 
+            posY = canvas_height / 2 -(canvas_width * mag/3);
+            posX = canvas_width / 2 -(canvas_width * mag/ 3); 
             let star = new fabric.Text('★',{
                 top: posY,
                 left : posX,
-                fontSize: canvas_width * 2 / 3,
+                fontSize: canvas_width * 2 * mag / 3,
                 stroke: 'black',
                 strokeWidth : 3,
                 fill: '#ccc'
@@ -128,12 +129,12 @@ function drawShape(canvas, shape){
             canvas.add(star);
             break;
         case 'heart':
-            posY = canvas_height / 2 - (canvas_width * 3 / 8);
-            posX = canvas_width / 2 -(canvas_width / 4); 
+            posY = canvas_height / 2 - (canvas_width * 3 * mag / 8);
+            posX = canvas_width / 2 -(canvas_width * mag / 5); 
             let heart = new fabric.Text('♥',{
                 top: posY,
                 left : posX,
-                fontSize: canvas_width *3 /4,
+                fontSize: canvas_width * 3 * mag /4,
                 stroke: 'black',
                 strokeWidth : 3,
                 fill: '#ccc'
@@ -142,22 +143,22 @@ function drawShape(canvas, shape){
             canvas.add(heart);
             break;
         case 'dubble':
-            posY = canvas_height / 2 - (canvas_width / 4);
-            posX = canvas_width / 2 - (canvas_width / 4);
+            posY = canvas_height / 2 - (canvas_width * mag / 4);
+            posX = canvas_width / 2 - (canvas_width * mag / 4);
             let first_circle = new fabric.Circle({
                 top: posY,
                 left : posX,
-                radius : canvas_width / 4,
+                radius : canvas_width * mag/ 4,
                 stroke: 'black',
                 strokeWidth : 3,
                 fill: '#ccc'
             });
-            let posY2 = canvas_height / 2 - (canvas_width / 10);
-            let posX2 = canvas_width / 2 - (canvas_width / 10);
+            let posY2 = canvas_height / 2 - (canvas_width * mag / 10);
+            let posX2 = canvas_width / 2 - (canvas_width * mag / 10);
             let second_circle = new fabric.Circle({
                 top: posY2,
                 left : posX2,
-                radius : canvas_width / 10,
+                radius : canvas_width * mag / 10,
                 stroke: 'black',
                 strokeWidth : 3,
                 fill: 'white'
@@ -251,4 +252,68 @@ function modifyMemo(memo_item){
             }
         });
     });
+}
+
+/*--------------------------------- Size select --------------------------------- */
+const memo_size = document.querySelector('.memo_size');
+const size_radios = document.querySelectorAll('.size_item');
+let select_size = null;
+
+size_radios.forEach(element => {
+    element.firstChild.addEventListener('change',(e)=>{
+        if(element.firstChild.checked){
+            select_size = element.firstChild.dataset.size;
+            memo_size.firstChild.innerText = `사이즈 : ${select_size}호`;
+            
+            switch (select_size) {
+                case '1':
+                    mag = 0.8;
+                    break;
+                case '2':
+                    mag = 1.0;
+                    break;
+                case '3':
+                    mag = 1.2;
+                    break; 
+                default:
+                    break;
+            }
+            drawShape(canvas, cur_shape);
+        }
+    });
+});
+
+/*--------------------------------- switch --------------------------------- */
+const shape_switch = document.querySelector('.shape_switch');
+const shape_switch_items = document.querySelectorAll('.shape_switch_item');
+const select_box = document.querySelector('.select_box');
+moveSwitch();
+
+function moveSwitch(){
+    shape_switch.addEventListener('click',()=>{
+        shape_switch_items.forEach(element => {
+            element.classList.toggle('shape_switch_item_active');
+
+            if (element.classList.contains('shape_switch_item_active')){
+                select_box.style.left='auto';
+                select_box.style.right = 0;  
+            }
+            else{
+                select_box.style.right = 'auto';    
+                select_box.style.left=0;
+            }
+        });    
+    });
+}
+
+/*--------------------------------- Image file --------------------------------- */
+const realUpload = document.querySelector('.real_upload');
+const upload = document.querySelector('.upload');
+
+upload.addEventListener('click', ()=> realUpload.click());
+realUpload.addEventListener('change', getImageFiles(realUpload));
+
+function getImageFiles(e){
+    const files = e.files[0];
+    console.log(files);
 }

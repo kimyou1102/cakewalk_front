@@ -219,8 +219,8 @@ main{
 }
 .select_box{
     position: absolute;
-    top: 0; left: 0;
-    
+    top: 0; left: 0; 
+
     width: 52%;
     height: 100%;
     
@@ -229,6 +229,8 @@ main{
 
     border-radius: 2rem;
 
+    -webkit-transition: all ease 1s;
+    transition: all ease 1s 0s;
 }
 .shape{
     margin-top: 1rem;
@@ -345,6 +347,11 @@ main{
 .memo_item li{
     font-size: 1rem;
     line-height: 1.3rem;
+}
+.memo_size{
+    margin-bottom: 1rem;
+
+    font-weight: 900;
 }
 .memo_input{
     width: 100%;

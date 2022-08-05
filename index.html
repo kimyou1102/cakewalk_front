@@ -62,9 +62,9 @@
                     <div class="select_size">
                         <div class="select_size_title">사이즈</div>
                         <div class="size_items">
-                            <div class="size_item"><input type="radio" name="size"> 1호</div>
-                            <div class="size_item"><input type="radio" name="size"> 2호</div>
-                            <div class="size_item"><input type="radio" name="size"> 3호</div>    
+                            <div class="size_item"><input type="radio" name="size" data-size="1"> 1호</div>
+                            <div class="size_item"><input type="radio" name="size" data-size="2" checked> 2호</div>
+                            <div class="size_item"><input type="radio" name="size" data-size="3"> 3호</div>    
                         </div>
                     </div>
                     <div class="select_shape">
@@ -93,6 +93,11 @@
                                 <img class="shape_item_inner" src="./img/shape_dubble.png">
                             </div>        
                         </div>
+                        <div class="picture">
+                            <h3>&lt;윗면 이미지&gt;</h3>
+                            <input class="real_upload" type="file" accept="image/*" required multiple style="display: none;">
+                            <div class="upload" style="width:300px; height:100px; border:1px solid red;"></div>
+                        </div>
                     </div>
 
                     <div class="order_btn">
@@ -109,7 +114,7 @@
             <div class="memo_board">
                 <h3 style="margin-bottom: 1rem;">&lt;memo&gt;</h3>
                 <list class="memo_list">
-                    <div class="memo_item"><li>test test test</li></div>
+                    <div class="memo_size"><li>사이즈 : 2호</li></div>
                 </list>
                 <textarea class="memo_input" placeholder="메모 작성하기" ></textarea>
                 
