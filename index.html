@@ -57,15 +57,15 @@
                 <div class="main_tool_box">
                     <div class="caution">
                         <div class="caution_img"><img src="./img/caution.png"></div>
-                        <div class="caution_text">크기의 호수와 높이(단)의 <span>사이즈는 가게마다 다를 수</span> 있습니다</div>
+                        <div class="caution_text"> 사이즈는 가게마다 다를 수 있습니다</div>
                     </div>
                     <div class="select_size">
-                        <div class="select_size_title">크기</div>
-                        <div class="select_size_tool">옵션선택<span>▽</span></div>
-                    </div>
-                    <div class="select_height">
-                        <div class="select_height_title">높이</div>
-                        <div class="select_height_tool">옵션 선택<span>▽</span></div>
+                        <div class="select_size_title">사이즈</div>
+                        <div class="size_items">
+                            <div class="size_item"><input type="radio" name="size"> 1호</div>
+                            <div class="size_item"><input type="radio" name="size"> 2호</div>
+                            <div class="size_item"><input type="radio" name="size"> 3호</div>    
+                        </div>
                     </div>
                     <div class="select_shape">
                         <div class="shape_switch">
@@ -107,9 +107,12 @@
                 <canvas id="c" ></canvas>
             </div>
             <div class="memo_board">
-                <div class="memo_board_title">
-                    <h3>&lt;memo&gt;</h3>
-                </div>
+                <h3 style="margin-bottom: 1rem;">&lt;memo&gt;</h3>
+                <list class="memo_list">
+                    <div class="memo_item"><li>test test test</li></div>
+                </list>
+                <textarea class="memo_input" placeholder="메모 작성하기" ></textarea>
+                
             </div>
             <div class="board_switch_btn">
                 <i class="fa-solid fa-arrows-rotate board_switch_btn_text"></i>

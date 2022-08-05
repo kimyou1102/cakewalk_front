@@ -146,54 +146,46 @@ main{
     padding: 10px;
 
     display: flex;
-    justify-content: center;
     align-items: center;
     
     background-color: #FFFEED;
     
 }
 .caution_img{
-    margin-right: 6px;
+    margin-right: 0.5rem;
 }
 .caution_text{
     font-size: 0.7rem;
     line-height: 14px;
-}
-.caution_text span{
     font-weight: 900;
 }
-.select_size, .select_height{
-    margin-top: 18px;
+.select_size{
+    margin-top: 1.5rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
+
 }
-.select_height{
-    margin-top: 10px;
-}
-.select_size_title, .select_height_title{
+.select_size_title{
     font-weight: 900;
     font-size: 1rem;
-}
-.select_size_tool, .select_height_tool{
-    width: 70%;
 
-    border: 1px solid black;
-    border-radius: 5px;
-
-    padding: 5px;
-
-    box-shadow: 0 2px 5px 1px rgba(0, 0, 0,0.3);
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    font-size: 0.8rem;
+    white-space: nowrap;
 }
 .select_shape{
     margin-top: 2rem;
+}
+.size_items{
+    margin-left: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+.size_item{
+    margin-right: 1rem;
+    
+    white-space: nowrap;
 }
 .shape_switch{
     position: relative;
@@ -332,12 +324,44 @@ main{
     top: 0; left: 0;
 }
 .memo_board{
+    position: relative;
+
     padding: 1rem 0.5rem;
     box-sizing: border-box;
     
     grid-area: memo;
     background-color: white;
+
+    overflow-y: scroll;
 }
+.memo_item{
+    text-decoration: underline;
+    text-underline-position: under;
+    
+    margin-bottom: 1rem;
+
+    cursor: pointer;
+}
+.memo_item li{
+    font-size: 1rem;
+    line-height: 1.3rem;
+}
+.memo_input{
+    width: 100%;
+    padding: 0.3rem;
+    box-sizing: border-box;
+
+    border: 1px solid #ccc;
+
+    word-break: break-all;
+}
+.memo_input:focus{
+    border: none;
+}
+.memo_input:focus::-webkit-input-placeholder {
+    color:transparent; 
+}
+
 .board_switch_btn{
     grid-area: switch;
 

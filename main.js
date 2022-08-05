@@ -1,3 +1,4 @@
+/*--------------------------------- Canvas --------------------------------- */
 const canvas = new fabric.Canvas('c');
 const canvas2 = new fabric.Canvas('c2');
 
@@ -191,4 +192,63 @@ function resizeCanvasSize(){
     canvas2.setDimensions({width : `${canvas2_width}`, height: `${canvas2_height}`});
 
     drawShape(canvas , cur_shape);
+}
+
+/*--------------------------------- Memo --------------------------------- */
+const memo_list = document.querySelector('.memo_list');
+const memo_input = document.querySelector('.memo_input');
+const memo_items = document.querySelectorAll('.memo_item');
+
+newMemo();
+memo_items.forEach(element => {
+    modifyMemo(element);
+});
+
+//메모 새로 추가
+function newMemo(){
+    memo_input.addEventListener('focusout',()=>{
+        if(memo_input.value){
+            const new_memo_item = document.createElement('li');
+            new_memo_item.innerText = memo_input.value;
+
+            const new_memo = document.createElement('div');
+            new_memo.classList.add('memo_item');
+            new_memo.appendChild(new_memo_item);
+            modifyMemo(new_memo);
+
+            memo_list.appendChild(new_memo);
+
+            memo_input.value = '';
+        }
+    });
+}
+
+// 메모 수정 or 삭제
+function modifyMemo(memo_item){
+    memo_item.addEventListener('click', (e)=>{
+        const new_textarea = document.createElement('textarea');
+        new_textarea.classList.add('memo_input');
+        new_textarea.value = memo_item.firstChild.innerText;
+
+        memo_list.insertBefore(new_textarea, memo_item);
+        new_textarea.focus();
+        memo_item.remove();
+        
+        new_textarea.addEventListener('focusout',(e)=>{
+            if(new_textarea.value){
+                const new_memo_item = document.createElement('li');
+                new_memo_item.innerText = new_textarea.value;
+
+                const new_memo_div = document.createElement('div');
+                new_memo_div.classList.add('memo_item');
+                new_memo_div.appendChild(new_memo_item);
+                modifyMemo(new_memo_div);
+
+                memo_list.insertBefore(new_memo_div, new_textarea);
+                new_textarea.remove();
+            }else{
+                new_textarea.remove();
+            }
+        });
+    });
 }
