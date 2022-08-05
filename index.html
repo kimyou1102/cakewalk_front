@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="./init.css">
     <link rel="stylesheet" href="./style.css">
 
+    <!-- font Awesome CND -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/js/all.min.js"></script>
+
+    <!-- fabric js CND -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
+    
     <script src="./main.js" defer></script>
 </head>
 <body>
@@ -46,7 +51,7 @@
                         <div class="order_num_item ">5</div>
                     </div>
                     <div class="order_title">
-                        시트 정하기
+                        시트 모양 정하기
                     </div>
                 </div>
                 <div class="main_tool_box">
@@ -70,22 +75,22 @@
                         </div>
                         <div class="shape">
                             <div class="shape_item" data-shape="circle">
-                                <img src="./img/shape_circle.png"> 
+                                <img class="shape_item_inner" src="./img/shape_circle.png"> 
                             </div>
                             <div class="shape_item" data-shape="rectangle">
-                                <img src="./img/shape_Rectangle.png">
+                                <img class="shape_item_inner" src="./img/shape_Rectangle.png">
                             </div>    
                             <div class="shape_item" data-shape="triangle">
-                                <img src="./img/shape_triangle.png">
+                                <img class="shape_item_inner" src="./img/shape_triangle.png">
                             </div>    
                             <div class="shape_item" data-shape="star">
-                                <img src="./img/shape_star.png">
+                                <img class="shape_item_inner" src="./img/shape_star.png">
                             </div>    
                             <div class="shape_item" data-shape="heart">
-                                <img src="./img/shape_heart.png">
+                                <img class="shape_item_inner" src="./img/shape_heart.png">
                             </div>    
                             <div class="shape_item" data-shape="dubble">
-                                <img src="./img/shape_dubble.png">
+                                <img class="shape_item_inner" src="./img/shape_dubble.png">
                             </div>        
                         </div>
                     </div>
@@ -96,22 +101,22 @@
                 </div>
             </div>
         </div>
-        <div class="work_board">
-            <canvas id="c" class="work_board_title">  
+        <div class="work_board_wrapper">
+            <div class="work_board active_board">
                 <h3>&lt;윗면&gt;</h3>
-            </canvas>
-        </div>
-        <div class="right_side_window">
+                <canvas id="c" ></canvas>
+            </div>
             <div class="memo_board">
                 <div class="memo_board_title">
                     <h3>&lt;memo&gt;</h3>
                 </div>
             </div>
             <div class="board_switch_btn">
-                <img src="./img/switch_board.png">
+                <i class="fa-solid fa-arrows-rotate board_switch_btn_text"></i>
             </div>
-            <div class="second_work_board">
-                <div class="second_work_board_title">&lt;옆면&gt;</div>
+            <div class="second_work_board unactive_board">
+                <h3>&lt;옆면&gt;</h3>
+                <canvas id="c2"></canvas>
             </div>
         </div>
     </main>

@@ -47,7 +47,7 @@ main{
 }
 .side_window{
     position: relative;
-
+    height: calc(100vh -60px);
     width: 20vw;
     min-width: 180px;
 }
@@ -55,7 +55,7 @@ main{
 /*--------------------- toolbar ----------------------*/
 .toolbar{
     width: 100%;
-
+    height: 50px;
     padding: 10px;
     box-sizing: border-box;
 
@@ -74,7 +74,7 @@ main{
 /*----------------------- main_toolbar --------------------*/
 .main_toolbar{
     background-color: #E8E8E8;
-    height: 80vh;
+    height: calc(100vh - 110px);
     width:  100%;
 }
 .order_num{
@@ -132,7 +132,7 @@ main{
 .main_tool_box{
     position: relative;
 
-    height: 80vh;
+    height: calc(100vh - 240px);
 
     background-color: white;
 
@@ -156,7 +156,7 @@ main{
     margin-right: 6px;
 }
 .caution_text{
-    font-size: 0.3rem;
+    font-size: 0.7rem;
     line-height: 14px;
 }
 .caution_text span{
@@ -174,7 +174,7 @@ main{
 }
 .select_size_title, .select_height_title{
     font-weight: 900;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 .select_size_tool, .select_height_tool{
     width: 70%;
@@ -190,7 +190,7 @@ main{
     justify-content: space-between;
     align-items: center;
 
-    font-size: 0.5rem;
+    font-size: 0.8rem;
 }
 .select_shape{
     margin-top: 2rem;
@@ -219,7 +219,7 @@ main{
     text-align: center;
     background-color: rgba(255, 255, 255, 0);
 
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 .shape_switch_item_active{
     color: black;
@@ -245,7 +245,7 @@ main{
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
-.shpae_item{
+.shape_item{
     position: relative;
 
     width: 100%;
@@ -294,52 +294,76 @@ main{
 }
 
 /*--------------------- work board -----------------*/
-.work_board{
-    height: calc(80vh + 100px);
-    width: 55vw;
-    
-    margin: 1.5rem;
-    margin-bottom: 0;
+.work_board_wrapper{
+    width: 80vw;
+    height: calc(100vh - 60px);
+
     padding: 1.5rem;
+    box-sizing: border-box;
 
-    background-color: white;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 7fr 2fr;
+    grid-template-rows: 15fr 1fr 10fr;
+    grid-template-areas: 
+        "main_board memo"
+        "main_board switch"
+        "main_board side_board"
+    ;
 }
-
-/*------------------- right side window --------------*/
-.right_side_window{
+.active_board{
+    grid-area: main_board;
+}
+.unactive_board{
+    grid-area: side_board;
+}
+.work_board{
+    padding: 1rem;
+    box-sizing: border-box;
+    
     position: relative;
     
-    width: 20vw;
+    background-color: white;
 
-    padding-right: 1rem;
-    box-sizing: border-box;
+    overflow: hidden;
+}
+#c{
+    position: absolute;
+    top: 0; left: 0;
 }
 .memo_board{
-    width: 100%;
-    height: 50vh;
-
-    padding: 0.5rem;
+    padding: 1rem 0.5rem;
     box-sizing: border-box;
-
-    margin-top: 1.5rem;
-    margin-left: 0;
-
+    
+    grid-area: memo;
     background-color: white;
 }
 .board_switch_btn{
-    width: 1rem;
-    height: 1rem;
+    grid-area: switch;
 
-    position: relative;
-    left:-1rem; top: 1rem;
+    width: fit-content;
 }
+.board_switch_btn_text {
+    font-size: 1.5rem;
+    color:black;
+
+    cursor: pointer;
+}
+.board_switch_btn_text:hover{
+    opacity: 50%;
+}
+
 .second_work_board{
-    position: absolute;
-    bottom: 1rem;
-
-    width: 100%;
-    height: 40vh;
-
+    padding: 1rem;
+    box-sizing: border-box;
+    
+    position: relative;
+    
     background-color: white;
-}
 
+    overflow: hidden;
+}
+#c2{
+    position: absolute;
+    top: 0; left: 0;
+}
