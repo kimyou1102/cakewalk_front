@@ -1,5 +1,5 @@
-*{
-    /* border: red solid 1px; */
+.unactive{
+    display: none !important;
 }
 body{
     overflow-x: hidden;
@@ -40,7 +40,6 @@ nav{
 }
 
 /*-------------------------------------------------------------*/
-
 main{
     width: 100vw;
     display: flex;
@@ -97,7 +96,7 @@ main{
 
     cursor: pointer;
 }
-.order_num .active{
+.order_num .order_num_item_active{
     color: white;
 }
 .order_num_item:nth-child(1){
@@ -128,8 +127,8 @@ main{
 
     box-shadow: 0 2px 5px 1px rgba(0, 0, 0,0.3);
 }
-/*---------------------- main_tool_box ----------------*/
-.main_tool_box{
+/*---------------------- STEP1 ----------------*/
+.step_box{
     position: relative;
 
     height: calc(100vh - 240px);
@@ -212,6 +211,8 @@ main{
     background-color: rgba(255, 255, 255, 0);
 
     font-size: 1rem;
+
+    white-space: nowrap;
 }
 .shape_switch_item_active{
     color: black;
@@ -263,6 +264,24 @@ main{
 
     transform: translate(-50%, -50%) scale(0.8);
 }
+.upload{
+    width: 100%;
+    height: 5rem;
+
+    margin-top: 1rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+
+    background-color: #ccc;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 0.8rem;
+    font-weight: 900;
+    color:rgba(0, 0, 0, 0.5);
+}
 .order_btn{
     position: absolute;
     left: 50%;
@@ -286,7 +305,6 @@ main{
 
     cursor: pointer;
 }
-
 /*--------------------- work board -----------------*/
 .work_board_wrapper{
     width: 80vw;
@@ -368,7 +386,6 @@ main{
 .memo_input:focus::-webkit-input-placeholder {
     color:transparent; 
 }
-
 .board_switch_btn{
     grid-area: switch;
 
@@ -383,7 +400,6 @@ main{
 .board_switch_btn_text:hover{
     opacity: 50%;
 }
-
 .second_work_board{
     padding: 1rem;
     box-sizing: border-box;
@@ -397,4 +413,34 @@ main{
 #c2{
     position: absolute;
     top: 0; left: 0;
+}
+/*-------------------------- STEP2 ------------------------*/
+.step2{
+
+}
+.fill{
+    display: flex;
+    font-weight: 900;
+}
+.fill_select{
+    position: relative;
+
+    margin-left: 1rem;
+
+    border: 1px solid black;
+    border-radius: 0.3rem;
+
+    overflow: hidden;
+}
+.fill_select_spread{
+    position: absolute;
+    top:0.2rem; right: 0.5rem;
+}
+.fill_select_item{
+    border: 1px solid red;
+    padding: 0.3rem 0.8rem;
+    padding-right: 2rem;
+
+    color:black;
+    cursor: pointer;
 }
