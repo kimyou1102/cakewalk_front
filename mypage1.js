@@ -1,15 +1,29 @@
-const header = document.querySelector('header');
-const rightBtn = document.querySelector('.right-btn');
-const cakeList = document.querySelector('.cakes');
+const $header = document.querySelector('header');
+const $leftBtn = document.querySelector('.left-btn');
+const $rightBtn = document.querySelector('.right-btn');
+const $cakeList = document.querySelector('.cakes');
 
 window.addEventListener("scroll", () => {
     if (window.scrollY !== 0) {
-        header.classList.add('headerBottom');
+        $header.classList.add('headerBottom');
     } else {
-        header.classList.remove('headerBottom');
+        $header.classList.remove('headerBottom');
     }
 });
 
-rightBtn.addEventListener("click", () => {
-    cakeList.scrollLeft += 350;
+const num = 500;
+$rightBtn.addEventListener("click", () => {
+    $cakeList.scrollBy({ left: num, top: 0, behavior: 'smooth' }) 
+})
+
+$leftBtn.addEventListener("click", () => {
+    $cakeList.scrollBy({ left: -num, top: 0, behavior: 'smooth' }) 
+})
+
+$cakeList.addEventListener('scroll', () => {
+    if($cakeList.scrollLeft !== 0) {
+        $leftBtn.classList.add('left-btn-show');
+    } else {
+        $leftBtn.classList.remove('left-btn-show');
+    }
 })

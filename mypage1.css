@@ -4,15 +4,14 @@
 
 html, body {
     margin: 0;
-    height: 100%;
 }
 
 header {
     width: 100%;
-    height: 65px;
+    height: 4.063rem;
     display: flex;
     justify-content: space-between;
-    padding: 0px 50px;
+    padding: 0 3.125rem;
     position: fixed;
     background-color: white;
     z-index: 1;
@@ -158,7 +157,7 @@ section {
 }
 
 .cakes::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+    display: none; 
 }
 
 .cakes-wrap {
@@ -187,6 +186,22 @@ section {
     height: 160px;
 }
 
+.left-btn {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-100%, -50%);
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.left-btn-show {
+    display: block;
+}
+
 .right-btn {
     position: absolute;
     right: 0;
@@ -198,7 +213,7 @@ section {
     cursor: pointer;
 }
 
-.fa-caret-right {
+.fa-caret-left, .fa-caret-right {
     color: #D9D9D9;;
 }
 

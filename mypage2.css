@@ -164,6 +164,7 @@ section {
 .time {
     padding: 0 11px;
     border-right: 1.5px solid #767676;
+    cursor: pointer;    
 }
 
 .time:nth-child(4) {
