@@ -108,16 +108,65 @@
                 </div>
                 <div class="step_box step2 unactive" data-step="2">
                     <div class="fill">
-                        채우기 선택
-                        <div class="fill_select fill_select_unactive">
-                            <div class="fill_select_spread"><i class="fa-solid fa-sort-down"></i></div>
-                            <div class="fill_select_item">단색 채우기</div>
-                            <div class="fill_select_item">그라데이션 채우기</div>
-                            <div class="fill_select_item">그림 채우기</div>
+                        <div class="fill_title_text">채우기 선택</div>
+                        <select class="fill_select">
+                            <option class="fill_select_item" data-type="single_color" selected>단색 채우기</option>
+                            <option class="fill_select_item" data-type="gradient">그라데이션 채우기</option>
+                            <option class="fill_select_item" data-type="image">그림 채우기</option>
+                        </select>
+                    </div>
+                    
+                    <div class="fill_item fill_single_color" data-type="single_color">
+                        
+                        <div class="fill_single_color_item">
+                            <div class="fill_title_text">색 선택(윗면)</div>
+                            <input class="up_color_selector" type="color" name="my_color" value="#f8bbd0">
+                        </div>
+                        <div class="fill_single_color_item">
+                            <div class="fill_title_text">색 선택(옆면)</div>
+                            <input class="side_color_selector" type="color" name="my_color" value="#f8bbd0">
                         </div>
                     </div>
-                    <div class="single_color">
 
+                    <div class="fill_item fill_gradient unactive" data-type="gradient">
+                        <div class="gradient_select_canvas">
+                            <div class="gradient_select_canvas_item"><input name="gradient_select_canvas" type="radio" data-canvas="up" checked>윗면</div>
+                            <div class="gradient_select_canvas_item"><input name="gradient_select_canvas" type="radio" data-canvas="side">옆면</div>
+                        </div>
+                        <div class="set_start_point">
+                            시작점
+                            <div class="gradient_set_item">
+                                X좌표 <input class="gradient_start_posX" type="range" value="0">
+                            </div>
+                            <div class="gradient_set_item">
+                                Y좌표 <input class="gradient_start_posY" type="range" value="0">
+                            </div>
+                            <div class="gradient_set_item">
+                                색상 <input class="gradient_start_color" type="color" value="#FFFFFF">
+                            </div>                       
+                        </div>
+                        <div class="set_end_point">
+                            끝점
+                            <div class="gradient_set_item">
+                                X좌표 <input class="gradient_end_posX" type="range" value="100">
+                            </div>
+                            <div class="gradient_set_item">
+                                Y좌표 <input class="gradient_end_posY" type="range" value="100">
+                            </div>
+                            <div class="gradient_set_item">
+                                색상 <input class="gradient_end_color" type="color" value="#f8bbd0">
+                            </div> 
+                        </div>
+
+                    </div>
+                    <div class="fill_item fill_img unactive"  data-type="image">
+                        <div class="fill_img_selector">
+                            <input class="fill_real_upload" type="file" accept="image/*" required multiple style="display: none;">
+                            <div class="fill_upload" ><p>사진 파일 가져오기</p></div>
+                        </div>
+                        <div style="margin-top: 1rem;">
+                            사진 사이즈 <input class="fill_img_scale" type="range" style="margin-left: 1rem;">
+                        </div>
                     </div>
                 </div>
                 <div class="step_box step3 unactive" data-step="3">

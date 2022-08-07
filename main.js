@@ -33,41 +33,40 @@ shape_btns.forEach( (ele) => {
         selected_shape = ele;
         selected_shape.classList.toggle('shape_item_active', true);
         cur_shape = selected_shape.dataset.shape;
-        drawShape(canvas, cur_shape);
+        drawShape();
     });
 });
 
-function drawShape(canvas, shape){
+function drawShape(){
     canvas.clear();
     canvas2.clear();
-    if(shape == null){
+    if(cur_shape == null){
         return;
     }
     else{
         let sideRect = new fabric.Rect({
             width: canvas2_width * 2 * mag/3 ,
             height : canvas2_height * mag/3,
-            fill:'#ccc',
+            fill: side_cake_color,
             stroke : 'black',
             strokeWidth: 3,
         });
         sideRect.set('selectable', false);
         canvas2.add(sideRect);
         canvas2.centerObject(sideRect);
+        sidesheet = sideRect;   
     }
-    let posX = 0;
-    let posY = 0;
-    switch(shape){
+    switch(cur_shape){
         case 'circle':
             let circle = new fabric.Circle({
                 radius : canvas_width * mag /4,
                 stroke: 'black',
                 strokeWidth : 3,
-                fill: '#ccc'
+                fill: cake_color,
             });
-            //circle.set('selectable', false);
             canvas.add(circle);
             canvas.centerObject(circle);
+            cakesheet = circle;
             break;
         case 'rectangle':
             let rect = new fabric.Rect({
@@ -75,11 +74,12 @@ function drawShape(canvas, shape){
                 height: canvas_width * mag/2,
                 stroke: 'black',
                 strokeWidth : 3,
-                fill: '#ccc'
+                fill: cake_color,
             });
             //rect.set('selectable', false);
             canvas.add(rect);
             canvas.centerObject(rect);
+            cakesheet = rect;
             break;
         case 'triangle':
             let tri = new fabric.Triangle({
@@ -87,40 +87,55 @@ function drawShape(canvas, shape){
                 height: (canvas_width / 2) * Math.sqrt(3)* mag / 2,
                 stroke: 'black',
                 strokeWidth : 3,
-                fill: '#ccc'
+                fill: cake_color,
             });
             //tri.set('selectable', false);
             canvas.add(tri);
             canvas.centerObject(tri);
+            cakesheet = tri;
             break;
         case 'star':
-            let star = new fabric.Text('★',{
-                fontSize: canvas_width * 2 * mag / 3,
+    
+            let star =  new fabric.Path('M 170.000 210.000  L 217.023 234.721 L 208.042 182.361 L 246.085 145.279 L 193.511 137.639 L 170.000 90.000 L 146.489 137.639 L 93.915 145.279 L 131.958 182.361 L 122.977 234.721 L 170.000 210.000');
+            star.set({
+                scaleX: mag *3.5,
+                scaleY: mag *3.5,
+                fill: cake_color,
                 stroke: 'black',
-                strokeWidth : 3,
-                fill: '#ccc'
-            });
+                strokeWidth : 6/7,
+            })
             //star.set('selectable', false);
             canvas.add(star);
             canvas.centerObject(star);
+            cakesheet = star;
             break;
         case 'heart':
-            let heart = new fabric.Text('♥',{
-                fontSize: canvas_width * 3 * mag /4,
+            let heart = new fabric.Path('M 272.70141,238.71731 \
+            C 206.46141,238.71731 152.70146,292.4773 152.70146,358.71731  \
+            C 152.70146,493.47282 288.63461,528.80461 381.26391,662.02535 \
+            C 468.83815,529.62199 609.82641,489.17075 609.82641,358.71731 \
+            C 609.82641,292.47731 556.06651,238.7173 489.82641,238.71731  \
+            C 441.77851,238.71731 400.42481,267.08774 381.26391,307.90481 \
+            C 362.10311,267.08773 320.74941,238.7173 272.70141,238.71731  \
+            z ');    
+            heart.set({ 
+                scaleX: mag,
+                scaleY: mag,
+                fill: cake_color,
                 stroke: 'black',
                 strokeWidth : 3,
-                fill: '#ccc'
             });
             //heart.set('selectable', false);
             canvas.add(heart);
             canvas.centerObject(heart);
+            cakesheet = heart;
             break;
         case 'dubble':
             let first_circle = new fabric.Circle({
                 radius : canvas_width * mag/ 4,
                 stroke: 'black',
                 strokeWidth : 3,
-                fill: '#ccc'
+                fill: cake_color,
             });
             let second_circle = new fabric.Circle({
                 radius : canvas_width * mag / 10,
@@ -128,11 +143,15 @@ function drawShape(canvas, shape){
                 strokeWidth : 3,
                 fill: 'white'
             }); 
+
             canvas.centerObject(first_circle);
             canvas.centerObject(second_circle);
+            
             let group = new fabric.Group([first_circle, second_circle]);
-            //group.set('selectable', false);
+            group.set('selectable', false);
             canvas.add(group);
+            
+            cakesheet = first_circle;
     }
 }
 
@@ -161,7 +180,7 @@ function resizeCanvasSize(){
     canvas2.setDimensions({width : `${canvas2_width}`, height: `${canvas2_height}`});
     
     if(switch_choice == 'shape'){
-        drawShape(canvas , cur_shape);
+        drawShape();
     }
     else{
         drawImage();
@@ -253,7 +272,7 @@ size_radios.forEach(element => {
                     break;
             }
             if(switch_choice == 'shape'){
-                drawShape(canvas, cur_shape);
+                drawShape();
             }
             else{
                 drawImage();
@@ -328,12 +347,13 @@ function drawImage(){
             left : side_posX,
             width: canvas2_width * 2 * mag/3 ,
             height : canvas2_height * mag/3,
-            fill:'#ccc',
+            fill: side_cake_color,
             stroke : 'black',
             strokeWidth: 3,
         });
         sideRect.set('selectable', false);
         canvas2.add(sideRect);
+        sidesheet = sideRect;
     }
 
     fabric.Image.fromURL(`${pic_url}`, function(img){
@@ -343,9 +363,9 @@ function drawImage(){
             img_left = img.left;
 
         });
-            
         canvas.add(img);
-        canvas.centerObject(img)
+        canvas.centerObject(img);
+        cakesheet = img;
     });
 }
 /*--------------------------------- order Num --------------------------------- */
@@ -388,3 +408,194 @@ order_num_items.forEach(element => {
 });
 
 /*--------------------------------- STEP2 --------------------------------- */
+/*--------------------------------- 색채우기 Type 선택 --------------------------------- */
+
+const fill_items = document.querySelectorAll('.fill_item');
+const fill_select = document.querySelector('.fill_select');
+let fill_select_type = fill_select.options[fill_select.selectedIndex].dataset.type;
+let fill_item_active;
+
+fill_items.forEach(element => {
+    if(!element.classList.contains('unactive')){
+        fill_item_active = element;
+    }
+});
+
+fill_select.addEventListener('change',()=>{
+    fill_select_type = fill_select.options[fill_select.selectedIndex].dataset.type;
+    fill_items.forEach(ele => {
+        if(ele.dataset.type == fill_select_type){
+            fill_item_active.classList.toggle('unactive', true);
+            ele.classList.toggle('unactive', false);
+            fill_item_active = ele;
+        }
+    });
+
+    switch (fill_select_type) {
+        case 'single_color':
+            setFillSingleColor();
+            break;
+        case 'gradient':
+            setFillGradient();
+            break;
+        case 'image':
+            setFillImage();
+            break;
+    }
+});
+
+/*--------------------------------- 단색 색채우기 --------------------------------- */
+let cakesheet;
+let sidesheet;
+let cake_color = '#f8bbd0';
+let side_cake_color = '#f8bbd0';
+
+const upColorSelector = document.querySelector('.up_color_selector');
+const sideColorSelector = document.querySelector('.side_color_selector');
+
+upColorSelector.addEventListener('change',()=>{
+    cake_color = upColorSelector.value;
+    if(cakesheet){
+        cakesheet.set('fill', cake_color);
+        canvas.requestRenderAll();
+    }
+});
+
+sideColorSelector.addEventListener('change',()=>{
+    side_cake_color = sideColorSelector.value;
+    if(sidesheet){
+        sidesheet.set('fill', side_cake_color);
+        canvas2.requestRenderAll();
+    }
+});
+
+function setFillSingleColor(){
+    if(cakesheet && sidesheet){
+        cake_color = upColorSelector.value;
+        side_cake_color = sideColorSelector.value;
+
+        cakesheet.set('fill', cake_color);
+        sidesheet.set('fill', side_cake_color);
+
+        canvas.requestRenderAll();
+        canvas2.requestRenderAll();
+    }
+}
+
+/*--------------------------------- 그라데이션 색채우기 --------------------------------- */
+const gradient_radios = document.querySelectorAll('.gradient_select_canvas_item');
+let gradient_work_board;
+
+const startposX = document.querySelector('.gradient_start_posX');
+const startposY = document.querySelector('.gradient_start_posY');
+const startColor = document.querySelector('.gradient_start_color');
+
+const endposX = document.querySelector('.gradient_end_posX');
+const endposY = document.querySelector('.gradient_end_posY');
+const endColor = document.querySelector('.gradient_end_color');
+
+startposX.addEventListener('change',()=>{
+    cake_color.coords.x1 = startposX.value /100;
+    setFillGradient();
+});
+startposY.addEventListener('change',()=>{
+    cake_color.coords.y1 = startposY.value /100;
+    setFillGradient();
+});
+endposX.addEventListener('change',()=>{
+    cake_color.coords.x2 = endposX.value /100;
+    setFillGradient();
+});
+endposY.addEventListener('change', ()=>{
+    cake_color.coords.y2 = endposY.value /100;
+    setFillGradient();
+});
+startColor.addEventListener('change', ()=>{
+    cake_color.colorStops[0].color = startColor.value;
+    setFillGradient();
+});
+endColor.addEventListener('change', ()=>{
+    cake_color.colorStops[1].color = endColor.value;
+    setFillGradient();
+});
+
+gradient_radios.forEach(element => {
+    element.firstChild.addEventListener('change',()=>{
+        if(element.firstChild.checked){
+            gradient_work_board = element.firstChild.dataset.canvas;
+            setFillGradient();
+        }
+    });
+
+    if(element.firstChild.checked){
+        gradient_work_board = element.firstChild.dataset.canvas;
+    }
+});
+
+function setFillGradient(){
+    if(cakesheet && sidesheet){
+        if(gradient_work_board == 'up'){
+            cake_color = new fabric.Gradient({
+                type:'linear',
+                gradientUnits: 'percentage',
+                coords : {
+                    x1 :  startposX.value / 100,
+                    y1 : startposY.value / 100,
+                    x2 : endposX.value / 100,
+                    y2 : endposY.value / 100,
+                },
+                colorStops :[
+                    {offset : 0, color: startColor.value},
+                    {offset : 1, color: endColor.value}
+                ]
+            });
+            cakesheet.set('fill', cake_color);
+            canvas.requestRenderAll();
+        }
+        else{
+            side_cake_color = new fabric.Gradient({
+                type:'linear',
+                gradientUnits: 'percentage',
+                coords : {
+                    x1 :  startposX.value / 100,
+                    y1 : startposY.value / 100,
+                    x2 : endposX.value / 100,
+                    y2 : endposY.value / 100,
+                },
+                colorStops :[
+                    {offset : 0, color: startColor.value},
+                    {offset : 1, color: endColor.value}
+                ]
+            });
+            sidesheet.set('fill', side_cake_color);
+            canvas2.requestRenderAll();
+        }
+    }
+}
+/*--------------------------------- 이미지 채우기 --------------------------------- */
+const fillRealUpload = document.querySelector('.fill_real_upload');
+const fillUpload = document.querySelector('.fill_upload');
+let fill_pic_url;
+
+fillUpload.addEventListener('click', ()=> fillRealUpload.click());
+fillRealUpload.addEventListener('change', ()=>{
+    let selected_pic = fillRealUpload.files[0];
+    
+    fill_pic_url = URL.createObjectURL(selected_pic);
+    setFillImage();
+});
+
+function setFillImage(){
+    if(cakesheet && sidesheet && fill_pic_url){
+        fabric.util.loadImage(fill_pic_url, function(img){
+            cake_color = new fabric.Pattern({
+                source: img,
+                repeat: 'no-repeat'
+            }) 
+            cakesheet.set('fill', cake_color);
+            canvas.renderAll();
+        });
+    }
+}
+
+const fill_img_sizeControl = document.querySelector('.fill_img_scale');
