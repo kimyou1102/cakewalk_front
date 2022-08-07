@@ -576,6 +576,8 @@ function setFillGradient(){
 const fillRealUpload = document.querySelector('.fill_real_upload');
 const fillUpload = document.querySelector('.fill_upload');
 let fill_pic_url;
+let pattern_img;
+let patternSourceCanvas 
 
 fillUpload.addEventListener('click', ()=> fillRealUpload.click());
 fillRealUpload.addEventListener('change', ()=>{
@@ -587,15 +589,49 @@ fillRealUpload.addEventListener('change', ()=>{
 
 function setFillImage(){
     if(cakesheet && sidesheet && fill_pic_url){
-        fabric.util.loadImage(fill_pic_url, function(img){
+        fabric.Image.fromURL(fill_pic_url, function(img){
+            img.scaleToWidth(100);
+            patternSourceCanvas = new fabric.StaticCanvas();
+            
+            pattern_img = img;
+            patternSourceCanvas.centerObject(img);
+            patternSourceCanvas.add(img);
+            patternSourceCanvas.renderAll();
+            
             cake_color = new fabric.Pattern({
-                source: img,
+                source: patternSourceCanvas.getElement(),
                 repeat: 'no-repeat'
             }) 
+
             cakesheet.set('fill', cake_color);
-            canvas.renderAll();
+            canvas.requestRenderAll();
         });
     }
 }
 
-const fill_img_sizeControl = document.querySelector('.fill_img_scale');
+const fillImgScale = document.getElementById('fill_img_scale') 
+fillImgScale.addEventListener('change', (e)=>{
+    pattern_img.scale(fillImgScale.value /10);
+    patternSourceCanvas.setDimensions({
+        width: pattern_img.width,
+        height: pattern_img.height,
+    });
+    console.log(pattern_img.width);
+    canvas.requestRenderAll();
+});
+
+document.getElementById('fill_img_offsetX').oninput = function () {
+    cake_color.offsetX = parseInt(this.value*5, 10);
+    canvas.requestRenderAll();
+};
+
+document.getElementById('fill_img_offsetY').oninput = function () {
+    cake_color.offsetY = parseInt(this.value*5, 10);
+    canvas.requestRenderAll();
+};
+
+document.getElementById('fill_img_angle').oninput = function(){
+    img.set('angle', this.value*5);
+    patternSourceCanvas.renderAll();
+    canvas.requestRenderAll();
+};
