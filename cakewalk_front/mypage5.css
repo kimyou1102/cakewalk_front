@@ -2,19 +2,15 @@
   font-size: 32px;
   font-weight: 550;
   margin-top: 175px;
-  margin-left: 388px;
 }
 
 .text {
   padding-top: 12px;
-  margin-left: 388px;
 }
 
 .day-button {
-  position: absolute;
   display: flex;
   padding-top: 50px;
-  margin-left: 388px;
 }
 
 .a {
@@ -58,46 +54,44 @@ a:active {
 
 .ask-menu {
   display: flex;
-
-  width: 780px;
-  margin-left: 443px;
+  align-items: center;
+  width: 935px;
+  height: 48px;
   margin-top: 10px;
+
   font-size: 15px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
-.line-up {
-  margin-top: 100px;
-  width: 935px;
-  margin-left: 386px;
+.ask-store {
+  margin-left: 60px;
 }
-
-.line-down {
-  margin-top: 10px;
-  width: 935px;
-  margin-left: 386px;
-}
-
 .ask-type {
   margin-left: 100px;
 }
 
 .ask-content {
-  margin-left: 100px;
+  margin-left: 105px;
 }
 
 .ask-day {
-  margin-left: 350px;
+  margin-left: 355px;
 }
 
 .ask-menu-bar {
   display: flex;
-  margin-top: 15px;
+  align-items: center;
+
   font-size: 15px;
+  border-bottom: 1px solid black;
+  width: 935px;
+  height: 67px;
 }
 
 .ask-menu-name {
-  margin-left: 400px;
   width: 114px;
+  margin-left: 18px;
 }
 
 .ask-menu-type {
@@ -121,7 +115,6 @@ a:active {
 }
 
 .page-number {
-  margin-left: 820px;
   margin-top: 60px;
 }
 

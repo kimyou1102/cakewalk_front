@@ -2,14 +2,11 @@
   font-size: 32px;
   font-weight: 550;
   margin-top: 175px;
-  margin-left: 388px;
 }
 
 .day-button {
-  position: absolute;
   display: flex;
   padding-top: 50px;
-  margin-left: 388px;
 }
 
 .a {
@@ -62,60 +59,58 @@ a:active {
 
 .review-menu {
   display: flex;
-
-  width: 740px;
-  margin-left: 443px;
-  margin-top: 10px;
+  width: 935px;
+  height: 47px;
+  margin-top: 22px;
   font-size: 15px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  align-items: center;
 }
 
-.line-up {
-  margin-top: 100px;
-  width: 935px;
-  margin-left: 386px;
-}
-
-.line-down {
-  margin-top: 10px;
-  width: 935px;
-  margin-left: 386px;
+.cake-title {
+  font-size: 15px;
+  margin-left: 70px;
+  width: 45px;
 }
 
 .order-menu {
-  margin-left: 200px;
+  width: 100px;
+  margin-left: 180px;
 }
 
 .grade {
-  margin-left: 100px;
+  width: 30px;
+  margin-left: 120px;
 }
 
 .detail-text {
-  margin-left: 200px;
+  width: 70px;
+  margin-left: 205px;
 }
 
 .cake-total {
   display: flex;
   font-size: 15px;
-  margin-left: 425px;
   width: 930px;
-  height: 80px;
-  margin-top: 13px;
+  height: 126px;
+  border-bottom: 1px solid #d9d9d9;
+  align-items: center;
 }
 
 .cake {
-  margin-top: 5px;
+  margin-left: 43px;
   width: 179px;
 }
 
 .cake-order-text {
-  margin-left: 110px;
-  padding-top: 20px;
+  margin-left: 85px;
 }
 
 .cake-grade {
-  margin-left: 90px;
-  padding-top: 30px;
+  margin-left: 110px;
 }
+
 .img {
   margin-left: 50px;
   border: 1px solid;
@@ -140,7 +135,6 @@ a:active {
 }
 
 .page-number {
-  margin-left: 820px;
   margin-top: 60px;
 }
 
@@ -172,9 +166,9 @@ a:active {
   margin: 10px;
 }
 
-.rectangle {
-  border: 1px solid #d9d9d9;
-  background: #d9d9d9;
-  width: 18px;
-  height: 18px;
+#delete:link,
+#delete:visited,
+#delete:active {
+  color: black;
+  text-decoration: none;
 }

@@ -29,7 +29,7 @@
   border: none;
   width: 90px;
   font-size: 17px;
-  margin-left: 13px;
+  margin-left: 9px;
 }
 
 a:link {
@@ -52,72 +52,67 @@ a:active {
   text-decoration: none;
 }
 
-.review-menu {
-  display: flex;
-  width: 100%;
-  height: 47px;
-  margin-top: 10px;
+.last-talk {
   font-size: 15px;
+  margin-top: 15px;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-}
-
-.review-menu div {
+  width: 935px;
+  height: 48px;
   display: flex;
   align-items: center;
 }
 
-.order-menu {
-  margin-left: 200px;
+.img-cake {
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  margin-left: 20px;
+  margin-top: 5px;
 }
 
-.grade {
-  margin-left: 100px;
-}
-
-.detail-text {
-  margin-left: 200px;
-}
-
-.cake-total {
+.name-text {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   font-size: 15px;
-  border-bottom: 1px solid black;
-  width: 930px;
-  height: 124px;
+  margin-left: 35px;
+  margin-top: 10px;
+  padding-top: 10px;
+  width: 530px;
+  height: 60px;
+  border-right: 1px solid #808080;
 }
 
-.cake {
-  width: 179px;
-}
-
-.cake-order-text {
-  margin-left: 87px;
-}
-
-.cake-grade {
-  margin-left: 76px;
-}
-.img {
-  border: 1px solid;
-  width: 95px;
-  height: 100px;
-  margin-left: 50px;
-}
-
-.detail-text-write {
+.info-text {
   display: flex;
-  margin-left: 48px;
+  flex-direction: column;
+  color: #808080;
+  font-size: 13px;
+  margin-top: 25px;
+  margin-left: 20px;
 }
 
-.write {
-  width: 170px;
-  margin-left: 15px;
+.total-first {
+  display: flex;
+  width: 881px;
+  height: 87px;
+  margin-top: 50px;
+  background: #fef4f7;
+  border-radius: 15px;
+  margin-left: 37px;
+}
+
+.total-second {
+  display: flex;
+  width: 881px;
+  height: 87px;
+  margin-top: 20px;
+  background: #fef4f7;
+  border-radius: 15px;
+  margin-left: 37px;
 }
 
 .page-number {
-  margin-left: 820px;
   margin-top: 60px;
 }
 
@@ -149,6 +144,7 @@ a:active {
   margin: 10px;
 }
 
-.article-review {
+.line-bottom {
+  margin-top: 46px;
   width: 935px;
 }
