@@ -1,6 +1,6 @@
-.body {
+/*.body {
   border: 1px solid blueviolet;
-}
+}*/
 
 .main1 {
   display: flex;
@@ -11,8 +11,6 @@
 }
 .store_info {
   margin-bottom: 46px;
-
-
 
   font-family: "Noto Sans";
   font-style: normal;
@@ -177,11 +175,13 @@ span {
   display: flex;
   margin: 28px 0;
   padding-bottom: 28px;
-  padding-left: 20px;
+  
 }
 
 .pickup1 {
   margin-right: 101px;
+  padding-left: 20px;
+
 }
 
 .sub {
@@ -217,16 +217,20 @@ span {
 
 .radio_css {
   display: flex;
-
   align-items: flex-start;
   padding: 0px;
   gap: 5px;
-
-  /*width: 52.06px;
-  height: 103px;*/
+  flex-direction: column;
 }
 
-
+.radio1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: center;
+}
 
 .sub2 {
   display: flex;
@@ -238,12 +242,9 @@ span {
   margin: 26px 0 67px 0;
 }
 
-
 .flavor {
   padding-right: 31px;
 }
-
-
 
 .sub3 {
   display: flex;
@@ -258,6 +259,10 @@ span {
 
 .adding {
   display: flex;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 5px;
+  flex-direction: column;
 }
 
 .button {
@@ -277,8 +282,8 @@ span {
   color: #000000;
 }
 
-.button_div{
-    display: flex;
-    justify-content: center;
-    padding: 42px 0 85px 0;
+.button_div {
+  display: flex;
+  justify-content: center;
+  padding: 42px 0 85px 0;
 }
