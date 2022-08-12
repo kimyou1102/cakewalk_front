@@ -1,0 +1,123 @@
+.title {
+  font-size: 32px;
+  font-weight: 550;
+  margin-top: 175px;
+}
+
+.sub-title {
+  margin-top: 60px;
+  margin-left: 10px;
+}
+
+.notice-wrap {
+  display: flex;
+  width: 860px;
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid #767676;
+  margin-top: 24px;
+}
+
+.notice {
+  width: 130px;
+  margin-left: 18px;
+  margin-top: 30px;
+}
+
+.img {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  width: 130px;
+  margin-left: 18px;
+  margin-top: 30px;
+}
+
+.rectangle {
+  width: 150px;
+  height: 150px;
+  border: none;
+  background-color: #d9d9d9;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.img-cake {
+  display: flex;
+  flex-direction: column;
+}
+
+.img-total {
+  display: flex;
+  border-bottom: 1px solid #d9d9d9;
+  width: 860px;
+  padding-bottom: 20px;
+}
+.img-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  width: 670px;
+  height: 400px;
+  margin-left: 50px;
+  overflow-y: scroll;
+}
+
+.cake-name {
+  margin-left: 10px;
+  margin-top: 5px;
+  width: 140px;
+  text-align: center;
+  /* border: 1px solid #d9d9d9; */
+  border: none;
+}
+
+textarea {
+  width: 625px;
+  height: 100px;
+  border: none;
+  resize: none;
+  margin-left: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.cake-price {
+  margin-left: 10px;
+  margin-top: 5px;
+  width: 140px;
+  text-align: center;
+  /* border: 1px solid #d9d9d9; */
+  border: none;
+}
+
+.img-wrap {
+  overflow-y: scroll;
+}
+
+.img-wrap::-webkit-scrollbar {
+  width: 8px; /* 스크롤바의 너비 */
+}
+
+.img-wrap::-webkit-scrollbar-thumb {
+  height: 100px; /* 스크롤바의 길이 */
+  background: #d9d9d9; /* 스크롤바의 색상 */
+
+  border-radius: 10px;
+}
+
+.img-wrap::-webkit-scrollbar-track {
+  background: transfer; /*스크롤바 뒷 배경 색상*/
+}
+
+.change {
+  width: 103px;
+  height: 30px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  margin-top: 40px;
+  margin-left: 480px;
+}
