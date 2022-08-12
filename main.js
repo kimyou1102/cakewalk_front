@@ -1,21 +1,19 @@
 const body = document.querySelector("body");
 
-const cakes = document.querySelector('.pics_cakes');
+const cakes = document.querySelector(".pics_cakes");
 
 const modal = document.querySelector(".modal");
-const modalBody =document.querySelector('.modal_body');
+const modalBody = document.querySelector(".modal_body");
 const modalImg = document.querySelector(".modal-img");
-// const btnOpenPopup = document.querySelector(".btn-open-popup");
 
 // btnOpenPopup.addEventListener("click", () => {
-//     console.log('클릭')
+//   console.log("클릭");
 //   modal.classList.toggle("show");
 
 //   if (modal.classList.contains("show")) {
 //     body.style.overflow = "hidden";
 //   }
 // });
-// console.log("ㅇㄹㄴㄴㅇ");
 
 modal.addEventListener("click", (event) => {
   console.log(event.target);
@@ -52,18 +50,22 @@ function offClick() {
   document.querySelector(".modal").style.display = "none";
 }
 
+cakes.addEventListener("click", (event) => {
+  console.log(event.target);
+  console.log(event.target.src);
+  modal.classList.add("show");
+  modalBody.classList.add("show");
+  modalImg.src = event.target.src;
+  if (modal.classList.contains("show")) {
+    // body.classList.add("hide");
+  }
+});
 
-cakes.addEventListener('click', (event) => {
-    console.log(event.target);
-    console.log(event.target.src);
-    modal.classList.add("show");
-    modalBody.classList.toggle("show");
-    modalImg.src = event.target.src;
-
-})
-
-modal.addEventListener('click', (event) => {
-    if(modal.classList.contains("show")) {
-        modal.classList.remove("show");
-    }
-})
+modal.addEventListener("click", (event) => {
+  console.log("sdfsdf");
+  if (modal.classList.contains("show")) {
+    modal.classList.remove("show");
+    modalBody.classList.remove("show");
+    body.classList.remove("hide");
+  }
+});
